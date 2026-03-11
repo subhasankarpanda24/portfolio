@@ -68,12 +68,11 @@ function typeWriter() {
 typeWriter();
 
 // ── Scroll reveal ──
-const revealEls = document.querySelectorAll('.hidden');
+const revealEls = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            entry.target.classList.remove('hidden');
         }
     });
 }, { threshold: 0.12 });
