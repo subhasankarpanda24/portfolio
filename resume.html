@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume — Subha Sankar Panda</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fff;
+            --text: #1a1a1a;
+            --accent: #0088cc;
+            --muted: #666;
+            --border: #eee;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0d1117;
+                --text: #c9d1d9;
+                --accent: #58a6ff;
+                --muted: #8b949e;
+                --border: #30363d;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.6;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        header { border-bottom: 2px solid var(--accent); padding-bottom: 20px; margin-bottom: 30px; }
+        h1 { font-family: 'Syne', sans-serif; font-size: 32px; text-transform: uppercase; margin-bottom: 5px; }
+        .sub { color: var(--accent); font-weight: 700; font-size: 14px; letter-spacing: 0.1em; margin-bottom: 10px; }
+        .contact { font-size: 12px; color: var(--muted); display: flex; gap: 15px; flex-wrap: wrap; }
+        .contact a { color: var(--muted); text-decoration: none; border-bottom: 1px solid transparent; }
+        .contact a:hover { border-bottom-color: var(--muted); }
+
+        section { margin-bottom: 30px; }
+        h2 { font-family: 'Syne', sans-serif; font-size: 18px; text-transform: uppercase; border-bottom: 1px solid var(--border); padding-bottom: 5px; margin-bottom: 15px; color: var(--accent); }
+        
+        .project { margin-bottom: 20px; }
+        .project-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; }
+        .project-title { font-weight: 700; font-size: 15px; }
+        .project-tech { font-size: 12px; color: var(--muted); font-style: italic; }
+        .project-desc { font-size: 13px; margin-left: 10px; }
+        .project-desc ul { list-style: disc; margin-left: 15px; margin-top: 5px; }
+
+        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .skill-item { font-size: 13px; }
+        .skill-label { font-weight: 700; color: var(--muted); margin-bottom: 4px; display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+        .edu-item, .cert-item { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 13px; }
+        .date { color: var(--muted); font-weight: 400; }
+
+        @media print {
+            body { padding: 20px; font-size: 12px; }
+            section { margin-bottom: 20px; }
+            .no-print { display: none; }
+            :root { --bg: #fff; --text: #000; --accent: #000; --muted: #444; --border: #ccc; }
+        }
+        .btn-print {
+            position: fixed; top: 20px; right: 20px;
+            background: var(--accent); color: #fff; border: none;
+            padding: 8px 16px; border-radius: 4px; cursor: pointer;
+            font-family: inherit; font-size: 12px; font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn-print no-print" onclick="window.print()">Print PDF</button>
+
+    <header>
+        <h1>Subha Sankar Panda</h1>
+        <div class="sub">Systems Developer & Automation Engineer</div>
+        <div class="contact">
+            <a href="mailto:subhasankarpanda16@gmail.com">subhasankarpanda16@gmail.com</a>
+            <a href="https://linkedin.com/in/subha-sankar-panda-115b0b375">LinkedIn</a>
+            <a href="https://github.com/subhasankarpanda24">GitHub</a>
+            <span>Odisha, India</span>
+        </div>
+    </header>
+
+    <section>
+        <h2>Work & Projects</h2>
+        
+        <div class="project">
+            <div class="project-header">
+                <div class="project-title">Smart Attendance & Risk Analytics System</div>
+                <div class="project-tech">Flask · MongoDB · Python · REST API</div>
+            </div>
+            <div class="project-desc">
+                Developed a full-stack student management platform with real-time tracking.
+                <ul>
+                    <li>Implemented role-based dashboard for Admins and Students with automated risk profiling.</li>
+                    <li>Built a "ML-lite" trend predictor to project attendance breaches using 4-week moving averages.</li>
+                    <li>Automated critical alerts via MongoDB triggers for consecutive absences and threshold drops.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-header">
+                <div class="project-title">Faculty AI Agent (RAG)</div>
+                <div class="project-tech">NLP · Python · Selenium · RapidFuzz</div>
+            </div>
+            <div class="project-desc">
+                Architected a retrieval-augmented generation chatbot for educational institutional data.
+                <ul>
+                    <li>Scraped 198+ faculty profiles using Selenium and processed data into structured Excel/Pandas sources.</li>
+                    <li>Integrated fuzzy-string matching (RapidFuzz) for high-accuracy identity resolution across research and department queries.</li>
+                    <li>Designed responsive dark-themed UI with persistent conversational memory and suggestion chips.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-header">
+                <div class="project-title">AI Automation Workflow Architecture</div>
+                <div class="project-tech">n8n · Webhooks · API Chaining</div>
+            </div>
+            <div class="project-desc">
+                Designed modular automation pipelines to synchronize data across disparate services.
+                <ul>
+                    <li>Minimized manual intervention by 90% through event-driven webhook triggers and API chaining.</li>
+                    <li>Engineered error-handling logic for high-reliability data processing workflows.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <span class="skill-label">Programming</span>
+                Python, JavaScript, Node.js, C
+            </div>
+            <div class="skill-item">
+                <span class="skill-label">Backend & Database</span>
+                Flask, REST APIs, MongoDB Atlas, SQL, CRUD Operation
+            </div>
+            <div class="skill-item">
+                <span class="skill-label">Automation & Tools</span>
+                Selenium, n8n, Git & GitHub, Postman, VS Code
+            </div>
+            <div class="skill-item">
+                <span class="skill-label">Concepts</span>
+                RAG Architecture, Systems Thinking, Scalable Workflow Design
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+        <div class="edu-item">
+            <div><strong>B.Tech in Computer Science & Engineering</strong> — NIST University</div>
+            <div class="date">2023 – Present</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Certifications</h2>
+        <div class="cert-item">
+            <div>SQL Micro Course — Skill Course</div>
+            <div class="date">2026</div>
+        </div>
+        <div class="cert-item">
+            <div>AI Tools & ChatGPT Workshop — be10x</div>
+            <div class="date">2026</div>
+        </div>
+        <div class="cert-item">
+            <div>Python Bootcamp — LetsUpgrade</div>
+            <div class="date">2026</div>
+        </div>
+    </section>
+</body>
+</html>
